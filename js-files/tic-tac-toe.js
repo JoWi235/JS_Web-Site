@@ -3,6 +3,7 @@ let gameField = ["","","","","","","","",""];
 let currountPlayer = "X";
 let result;
 let mode;
+let gameStatus;
 let draws = 0;
 let X = 0;
 let O = 0;
@@ -11,14 +12,13 @@ function clicked(buttonid) {
     if(gameField[buttonid] == ""){
         gameField[buttonid] = currountPlayer;
         document.getElementById(buttonid).innerHTML = currountPlayer;
-        checkfield();
+        checkWinner();
     }
 }
 
-function checkfield(){
-    result =
+let checkFieldTiles = () => {
     // Horizontal
-    checkTile(0,1,2)+
+    return checkTile(0,1,2)+
     checkTile(3,4,5)+
     checkTile(6,7,8)+
     //  Vertikal
@@ -28,7 +28,10 @@ function checkfield(){
     // Diagonal
     checkTile(0,4,8)+
     checkTile(2,4,6);
-    
+}
+
+function checkWinner(){
+    result = checkFieldTiles();
     if(result > 0){
         switch(currountPlayer){
             case "X":
