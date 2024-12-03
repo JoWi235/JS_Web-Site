@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css-files/tic-tac-toe.css" type="text/css">
+    <link rel="stylesheet" href="../css-files/navbar.css" type="text/css">
+    <script src="../js-files/tic-tac-toe.js"></script>
+    <title>Tic Tac Toe</title>
+</head>
+<body>
+    <nav>
+        <input type="checkbox" id="sidebar-active">
+        <label for="sidebar-active" class="open-sidebar-button">
+          <svg xmlns="http://www.w3.org/2000/svg" height="32" viewBox="0 -960 960 960" width="32"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg>
+        </label>
+        <label id="overlay" for="sidebar-active"></label>
+        <div class="links-container">
+            <label for="sidebar-active" class="close-sidebar-button">
+                <svg xmlns="http://www.w3.org/2000/svg" height="32" viewBox="0 -960 960 960" width="32"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg>
+            </label>
+    
+            <a class="home-link" href="../index.html">
+                Home
+            </a> 
+            <a href="/html-files/tic-tac-toe.html">
+                Tic Tac Toe Game
+            </a>
+        </div>
+    </nav>
+    <div class="title">
+        Tic Tac Toe Game
+    </div>
+    <div id="player">
+        Current Player: X
+    </div>
+    <div class="button-container">
+        <div class="button-item">
+            <button type="button" onclick="clicked(this.id)" id="0"></button>
+        </div>
+        <div class="button-item">
+            <button type="button" onclick="clicked(this.id)" id="1"></button>
+        </div>
+        <div class="button-item">
+            <button type="button" onclick="clicked(this.id)" id="2"></button>
+        </div>
+        <div class="button-item">
+            <button type="button" onclick="clicked(this.id)" id="3"></button>
+        </div>
+        <div class="button-item">
+            <button type="button" onclick="clicked(this.id)" id="4"></button>
+        </div>
+        <div class="button-item">
+            <button type="button" onclick="clicked(this.id)" id="5"></button>
+        </div>
+        <div class="button-item">
+            <button type="button" onclick="clicked(this.id)" id="6"></button>
+        </div>
+        <div class="button-item">
+            <button type="button" onclick="clicked(this.id)" id="7"></button>
+        </div>
+        <div class="button-item">
+            <button type="button" onclick="clicked(this.id)" id="8"></button>
+        </div>
+    </div>
+    <div class="point-container">
+        <p>
+            Points
+        </p>
+        <table>
+            <tr>
+                <th>Draws</th>
+                <th>O</th>
+                <th>X</th>
+            </tr>
+            <tr>
+                <td id="draw">0</td>
+                <td id="point-O">0</td>
+                <td id ="point-X">0</td>
+            </tr>
+        </table>
+    </div>
+    <div class="extraButton-container">
+        <button type="button" onclick="setup()" id="resetField" class="extra">Field Reset</button>
+        <button type="button" onclick="pointReset()" id="pointreset" class="extra">Point Reset</button>
+        <button type="button" onclick="currountPlayerSwitch()" id="player-switch" class="extra">Player switch</button>
+        <button type="button" onclick="resetGame()" id="resetField" class="extra">Reset Game</button>
+    </div>
+    <div class="automatikReset">
+        <p id="ar">
+            Automatic Reset:
+        </p>
+        <label class="switch">
+            <input type="checkbox" id="checkBox">
+            <span class="slider round"></span>
+        </label>
+    </div>
+</body>
+</html>
