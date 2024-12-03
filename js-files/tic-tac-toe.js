@@ -3,7 +3,7 @@ let gameField = ["","","","","","","","",""];
 let currountPlayer = "X";
 let result;
 let mode;
-let gameStatus;
+let gameStatus = "before";//before, active, finished
 let draws = 0;
 let X = 0;
 let O = 0;
