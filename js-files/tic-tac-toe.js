@@ -3,7 +3,7 @@ let gameField = ["","","","","","","","",""];
 let currountPlayer = "X";
 let result;
 let mode;
-let gameStatus = "before";//before, active, finished
+let onGame = false;
 let draws = 0;
 let X = 0;
 let O = 0;
@@ -12,6 +12,9 @@ function clicked(buttonid) {
     if(gameField[buttonid] == ""){
         gameField[buttonid] = currountPlayer;
         document.getElementById(buttonid).innerHTML = currountPlayer;
+        onGame = true;
+        playerSwitchdisabled(onGame);
+        document.getElementById("player-switch").disabled = true;
         checkWinner();
     }
 }
@@ -43,6 +46,10 @@ function checkWinner(){
                 document.getElementById("point-O").innerHTML = O;
                 break;
         }
+        document.getElementById("resetField").style.background='#008000';
+        document.getElementById("resetField").innerText = 'Restart';
+        onGame = false;
+        playerSwitchdisabled(onGame);
         currountPlayerSwitch();
         automaticGameRestart();
     }else{
@@ -84,6 +91,9 @@ function setup(){
         document.getElementById(index).innerHTML = ""; 
     }
     buttonMode(false);
+    document.getElementById("player-switch").disabled = false;
+    document.getElementById("resetField").style.background='#007bff';
+    document.getElementById("resetField").innerText = 'Field Reset';
 }
 
 function pointReset(){
@@ -94,6 +104,12 @@ function pointReset(){
     document.getElementById("point-O").innerHTML = O;
     document.getElementById("point-X").innerHTML = X;
 
+}
+
+function automaticRestartChecked(){
+    if(!onGame && document.getElementById("checkBox").checked){
+        setup();
+    }
 }
 
 function automaticGameRestart(){
@@ -118,5 +134,13 @@ function buttonMode(mode){
         for (let i = 0; i <= 8; i++) {
             document.getElementById(i).disabled = false; 
         }
+    }
+}
+
+function playerSwitchdisabled(state){
+    if(state){
+        document.getElementById("player-switch").disabled = true;
+    }else{
+        document.getElementById("player-switch").disabled = false;
     }
 }
