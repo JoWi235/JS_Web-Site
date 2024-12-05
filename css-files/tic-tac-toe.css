@@ -27,7 +27,7 @@
 .extraButton-container {
     display: grid;
     grid-template-rows: auto auto;
-    width: 320px;
+    width: 260px;
     margin: 50px auto;
     justify-content: center;
 }
@@ -42,8 +42,10 @@
 
 #extraDiv {
     display: flex;
-    justify-content: space-between;
-    gap: 20px;
+    justify-content: center;
+    justify-self: center;
+    
+    /*gap: 20px;*/
 }
 
 /* Field Reset Button (größer) */
@@ -120,20 +122,18 @@ input:checked + .slider:before {
 
 /* Player Switch und Reset Game Buttons */
 .extra {
-    background-color: #f0f0f0;
-    border: 2px solid #ccc;
+    background-color: #007bff;
+    border: none;
+    color: white;
+    border-radius: 5px;
     height: 50px;
-    width: 100px;
+    width: 115px;
     margin: 10px;
     align-items: center;
     text-align: center;
     display: grid;
     justify-content: center;
     cursor: pointer;
-}
-
-.extra:hover {
-    background-color: #ddd;
 }
 
 .button-item {
@@ -148,7 +148,7 @@ input:checked + .slider:before {
     cursor: pointer;
 }
 
-button {
+.gamefield {
     background: none;
     border: none;
     width: 100%;
@@ -159,7 +159,7 @@ button {
     outline: none;
 }
 
-button:hover {
+.gamefield:hover {
     background-color: #ddd;
 }
 
