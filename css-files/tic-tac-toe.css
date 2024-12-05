@@ -11,6 +11,11 @@
     font-size: 24px;
 }
 
+#player {
+    display: flex;
+    justify-content: center;
+}
+
 .button-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -19,16 +24,124 @@
     margin: 50px auto;
 }
 
-.extraButton-container{
+.extraButton-container {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    gap: 5px;
-    width: 500px;
+    grid-template-rows: auto auto;
+    gap: 20px;
+    width: 320px;
     margin: 50px auto;
+    justify-content: center;
 }
 
-.button-item{
+#resetDiv {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 5px;
+    text-align: center;
+}
+
+#extraDiv {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+/* Field Reset Button (größer) */
+#resetField {
+    flex: 2;
+    padding: 15px 30px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+}
+
+#resetField:hover {
+    background-color: #0056b3;
+}
+
+/* Automatik Reset Styling */
+.automatikReset {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+#ar {
+    font-size: 12px;
+    text-align: center;
+}
+
+/* Switch Styling */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 20px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 20px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 14px;
+    width: 14px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #007bff;
+}
+
+input:checked + .slider:before {
+    transform: translateX(20px);
+}
+
+/* Player Switch und Reset Game Buttons */
+.extra {
+    background-color: #f0f0f0;
+    border: 2px solid #ccc;
+    height: 50px;
+    width: 100px;
+    margin: 10px;
+    align-items: center;
+    text-align: center;
+    display: grid;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.extra:hover {
+    background-color: #ddd;
+}
+
+.button-item {
     background-color: #f0f0f0;
     border: 2px solid #ccc;
     height: 100px;
@@ -74,97 +187,4 @@ th, td {
     padding: 10px;
     text-align: center;
     width: 33%;
-}
-
-#player {
-    display: flex;
-    justify-content: center;
-    margin: 25px;
-    font-size: 25px;
-}
-
-#ar{
-    font-size: 12px;
-}
-
-.extra {
-    background-color: #f0f0f0;
-    border: 2px solid #ccc;
-    height: 50px;
-    width: 100px;
-    margin: 10px;
-    align-items: center;
-    text-align: center;
-    display: grid;
-    justify-content: center;
-    cursor: pointer;
-}
-
-.extra:hover {
-    background-color: #ddd;
-}
-
-.automatikReset {
-
-}
-
-
-/*Checkbox*/
-.switch {
-    position: relative;
-    display: inline-block;
-    width: 60px;
-    height: 34px;
-}
-  
-.switch input { 
-    opacity: 0;
-    width: 0;
-    height: 0;
-}
-  
-.slider {
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #ccc;
-    -webkit-transition: .4s;
-    transition: .4s;
-}
-  
-.slider:before {
-    position: absolute;
-    content: "";
-    height: 26px;
-    width: 26px;
-    left: 4px;
-    bottom: 4px;
-    background-color: white;
-    -webkit-transition: .4s;
-    transition: .4s;
-}
-  
-input:checked + .slider {
-    background-color: #2196F3;
-}
-  
-input:focus + .slider {
-    box-shadow: 0 0 1px #2196F3;
-}
-  
-input:checked + .slider:before {
-    -webkit-transform: translateX(26px);
-    -ms-transform: translateX(26px);
-    transform: translateX(26px);
-}
-
-.slider.round {
-    border-radius: 34px;
-}
-  
-.slider.round:before {
-    border-radius: 50%;
 }

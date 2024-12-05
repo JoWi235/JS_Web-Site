@@ -81,18 +81,22 @@
         </div>
     </div>
     <div class="extraButton-container">
-        <button type="button" onclick="setup()" id="resetField" class="extra">Field Reset</button>
-        <div class="automatikReset">
-            <p id="ar">
-                Automatic Reset:
-            </p>
-            <label class="switch">
-                <input type="checkbox" id="checkBox">
-                <span class="slider round"></span>
-            </label>
+        <div id="resetDiv">
+            <button type="button" onclick="setup()" id="resetField" class="extra">Field Reset</button>
+            <div class="automatikReset">
+                <p id="ar">
+                    Automatic Reset:
+                </p>
+                <label class="switch">
+                    <input type="checkbox" id="checkBox">
+                    <span class="slider round"></span>
+                </label>
+            </div>
         </div>
-        <button type="button" onclick="currountPlayerSwitch()" id="player-switch" class="extra">Player switch</button>
-        <button type="button" onclick="resetGame()" id="resetField" class="extra">Reset Game</button>
+        <div id="extraDiv">
+            <button type="button" onclick="currountPlayerSwitch()" id="player-switch" class="extra">Player switch</button>
+            <button type="button" onclick="resetGame()" class="extra">Reset Game</button>
+        </div>
     </div>
 </body>
 </html>
