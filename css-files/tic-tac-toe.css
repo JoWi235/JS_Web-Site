@@ -27,7 +27,6 @@
 .extraButton-container {
     display: grid;
     grid-template-rows: auto auto;
-    gap: 20px;
     width: 320px;
     margin: 50px auto;
     justify-content: center;
@@ -51,7 +50,7 @@
 #resetField {
     flex: 2;
     padding: 15px 30px;
-    font-size: 16px;
+    font-size: 14px;
     background-color: #007bff;
     color: white;
     border: none;
