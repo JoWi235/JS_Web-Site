@@ -1,8 +1,8 @@
 
-let gameField = ["","","","","","","","",""];
+const gameField = ["","","","","","","","",""];
+
 let currountPlayer = "X";
 let result;
-let mode;
 let onGame = false;
 let draws = 0;
 let X = 0;
@@ -13,8 +13,7 @@ function clicked(buttonid) {
         gameField[buttonid] = currountPlayer;
         document.getElementById(buttonid).innerHTML = currountPlayer;
         onGame = true;
-        playerSwitchdisabled(onGame);
-        document.getElementById("player-switch").disabled = true;
+        playerSwitchdisabled();
         checkWinner();
     }
 }
@@ -46,16 +45,11 @@ function checkWinner(){
                 document.getElementById("point-O").innerHTML = O;
                 break;
         }
-        document.getElementById("resetField").style.background='#008000';
-        document.getElementById("resetField").innerText = 'Restart';
-        onGame = false;
-        playerSwitchdisabled(onGame);
-        currountPlayerSwitch();
         automaticGameRestart();
     }else{
-        currountPlayerSwitch();
-        draw();
+        checkdraw();
     }
+    currountPlayerSwitch();
 }
 
 function currountPlayerSwitch(){
@@ -77,7 +71,7 @@ function checkTile( x1, x2, x3){
 }
 
 
-function draw(){
+function checkdraw(){
     if(!gameField.some(field=> field=="")){
         draws++;
         document.getElementById("draw").innerHTML = draws;
@@ -86,13 +80,14 @@ function draw(){
 }
 
 function setup(){
-    gameField = ["","","","","","","","",""];
     for (let index = 0; index < gameField.length; index++) {
         document.getElementById(index).innerHTML = ""; 
+        gameField[index] = "";
     }
     buttonMode(false);
-    document.getElementById("player-switch").disabled = false;
-    document.getElementById("resetField").style.background='#007bff';
+    onGame = false;
+    playerSwitchdisabled();
+    document.getElementById("resetField").style.background = '#007bff';
     document.getElementById("resetField").innerText = 'Field Reset';
 }
 
@@ -113,6 +108,10 @@ function automaticRestartChecked(){
 }
 
 function automaticGameRestart(){
+    document.getElementById("resetField").style.background='#008000';
+    document.getElementById("resetField").innerText = 'Restart';
+    onGame = false;
+    playerSwitchdisabled();
     if(document.getElementById("checkBox").checked){
         setup();
     }else{
@@ -121,26 +120,22 @@ function automaticGameRestart(){
 }
 
 function resetGame(){
+    playerSwitchdisabled();
     setup();
     pointReset();
 }
 
 function buttonMode(mode){
-    if(mode){
-        for (let i = 0; i <= 8; i++) {
-            document.getElementById(i).disabled = true; 
-        }
-    }else{
-        for (let i = 0; i <= 8; i++) {
-            document.getElementById(i).disabled = false; 
-        }
+    for (let i = 0; i <= 8; i++) {
+        document.getElementById(i).disabled = mode; 
     }
 }
 
-function playerSwitchdisabled(state){
-    if(state){
-        document.getElementById("player-switch").disabled = true;
+function playerSwitchdisabled(){
+    document.getElementById("player_switch").disabled = onGame;
+    if(onGame){
+        document.getElementById("player_switch").style.background = '#808080';
     }else{
-        document.getElementById("player-switch").disabled = false;
+        document.getElementById("player_switch").style.background = '#007bff';
     }
 }
