@@ -1,0 +1,4 @@
+pre {
+    font-family: monospace; /* Monospace-Schrift für korrekte Ausrichtung */
+    line-height: 1.2;      /* Optional für bessere Lesbarkeit */
+}
