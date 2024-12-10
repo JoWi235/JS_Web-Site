@@ -1,0 +1,69 @@
+/* Allgemeine Einstellungen */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+}
+
+/* Container für die Liste */
+#list-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%; /* Optional, falls du zusätzliche Inhalte einfügst */
+}
+
+#list {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    text-align: left;
+}
+
+/* Überschrift */
+#list h4 {
+    margin-bottom: 15px;
+    color: #444;
+    font-size: 1.2em;
+    border-bottom: 2px solid #007bff;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+/* Liste */
+#list ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+#list li {
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+#list li:last-child {
+    border-bottom: none;
+}
+
+/* Alter (markiert durch ID) */
+#age {
+    font-weight: bold;
+    color: #007bff;
+}
+
+/* Link-Styling */
+#list a {
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+#list a:hover {
+    color: #0056b3;
+}

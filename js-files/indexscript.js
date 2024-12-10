@@ -1,7 +1,7 @@
 
 document.addEventListener("DOMContentLoaded", () => {
     const myBirthday = "2009-05-23";
-    document.getElementById("age").innerHTML = calculateMyAge(myBirthday);
+    document.getElementById("age").innerHTML = 'Mein alter: ' + calculateMyAge(myBirthday);
 
     function calculateMyAge(birthday) {
         const toDay = new Date();
