@@ -1,4 +1,4 @@
-/* Allgemeine Einstellungen */
+
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f9;
@@ -8,12 +8,11 @@ body {
     height: 100vh;
 }
 
-/* Container für die Liste */
 #list-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%; /* Optional, falls du zusätzliche Inhalte einfügst */
+    width: 100%;
 }
 
 #list {
@@ -25,7 +24,6 @@ body {
     text-align: left;
 }
 
-/* Überschrift */
 #list h4 {
     margin-bottom: 15px;
     color: #444;
@@ -35,7 +33,6 @@ body {
     padding-bottom: 5px;
 }
 
-/* Liste */
 #list ul {
     list-style-type: none;
     padding: 0;
@@ -51,13 +48,11 @@ body {
     border-bottom: none;
 }
 
-/* Alter (markiert durch ID) */
 #age {
     font-weight: bold;
     color: #007bff;
 }
 
-/* Link-Styling */
 #list a {
     color: #007bff;
     text-decoration: none;
