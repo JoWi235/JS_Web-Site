@@ -42,10 +42,12 @@
         </div>
         <div>
             <input type="text" id="guessTextField" placeholder="Put your guess here">
-            <button type="button" onclick="readGuessTextField()">Submit guess</button>
+            <button type="button" onclick="readGuessTextField()" disabled="true" id="submitGuessButton">Submit guess</button>
         </div>
         <div>
+            <p>Wort:</p>
             <p id="wordOutput"></p>
+            <p>Falsche Buchstaben:</p>
             <p id="wrongOutput"></p>
         </div>
         <button type="button" onclick="reset()">Reset</button>
