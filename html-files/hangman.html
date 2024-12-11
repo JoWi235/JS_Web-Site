@@ -32,7 +32,25 @@
             </a>
         </div>
     </nav>
-    <pre id="hangman"></pre>
-
+    <div>
+        <h2>
+            Hangman
+        </h2>
+        <div>
+            <input type="text" id="wordTextField" placeholder="Put the word in here ">
+            <button type="button" onclick="readTextField()" id="submitButton">Submit</button>
+        </div>
+        <div>
+            <input type="text" id="guessTextField" placeholder="Put your guess here">
+            <button type="button" onclick="readGuessTextField()">Submit guess</button>
+        </div>
+        <div>
+            <p id="wordOutput"></p>
+            <p id="wrongOutput"></p>
+        </div>
+        <button type="button" onclick="reset()">Reset</button>
+        
+        <pre id="hangman"></pre>
+    </div>
 </body>
 </html>
