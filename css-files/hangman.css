@@ -61,3 +61,7 @@
     background-color: #f4f4f4; /* Hintergrund für besseren Kontrast */
     color: #007BFF; /* Blaues Design */
 }
+
+p:empty {
+    height: 19px;
+}
