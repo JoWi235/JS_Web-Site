@@ -1,6 +1,6 @@
 /*
      wordinputfield disablen
-     
+
  */
 let word;
 let wordInChars = [];
@@ -53,6 +53,11 @@ function readAndDelete(textField){
           text = originalText.toLowerCase();
           return text;
      }   
+}
+
+function reset(){
+     variableReset();
+     frontReset();
 }
 
 function charToOutput(){
@@ -119,12 +124,6 @@ function checkLose(){
           reset();
      }
      document.getElementById("hangman").innerHTML = hangmanStages[wrongChars.length];
-}
-
-
-function reset(){
-     variableReset();
-     frontReset();
 }
 
 function variableReset(){
