@@ -1,7 +1,4 @@
-/*
-     wordinputfield disablen
 
- */
 let word;
 let wordInChars = [];
 let wrongChars = [];
@@ -23,8 +20,7 @@ function readTextField(){
           alert('Please put a word in the word Field!');
           return;
      }
-     document.getElementById("submitButton").disabled = true;
-     document.getElementById("submitGuessButton").disabled = false;
+     buttonMode(false);
      wordInChars = word.split('');
      charToOutput();
      displayWordLength();
@@ -137,8 +133,14 @@ function frontReset(){
      document.getElementById("wrongOutput").innerHTML = '';
      document.getElementById("word").innerHTML = 'Wort:'
      document.getElementById("hangman").innerHTML = hangmanStages[0];
-     document.getElementById("submitButton").disabled = false;
-     document.getElementById("submitGuessButton").disabled = true;
+     buttonMode(true);
+}
+
+function buttonMode(mode){
+     document.getElementById("submitButton").disabled = !mode;
+     document.getElementById("wordTextField").disabled = !mode;
+     document.getElementById("submitGuessButton").disabled = mode;
+     document.getElementById("guessTextField").disabled = mode;
 }
 
 const hangmanStages = [
