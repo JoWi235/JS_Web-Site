@@ -1,3 +1,8 @@
+/*
+     code lesbarer machen -> mehr in functionen auslagern
+
+ */
+
 let word; //string
 let wordInChars; //array
 let wrongChars = [];//array
@@ -5,6 +10,8 @@ let wordOutputArray = [];//array
 let wordOutputString; //string
 let inputGuess;//string
 let guessArray = [];//array
+let wordlength = 0;
+
 
 document.addEventListener("DOMContentLoaded", () => {
           document.getElementById("hangman").innerHTML = hangmanStages[0];
@@ -27,6 +34,14 @@ function readTextField(){
                }
                
           }
+
+          for (let j = 0; j < wordOutputArray.length; j++) {
+               if (wordOutputArray[j] == '_') {
+                    wordlength++;
+               }
+          }
+
+          document.getElementById("word").innerHTML = 'Wort(' + wordlength + ' Buchstaben):';
 
           wordOutputString = wordOutputArray.join('');
           document.getElementById("wordOutput").innerHTML = wordOutputString;
@@ -54,7 +69,6 @@ function readAndDelete(textField){
      text = originalText.toLowerCase();
      document.getElementById(textField).value = '';
      if (originalText.trim() == '') {
-          console.log("hallo");
           return 1;
      }else{
           return text;
@@ -71,7 +85,9 @@ function guess(){
                }
              }
           if (!wordOutputArray.some(underscore => underscore == "_")) {
+
                console.log('You won! The word was: ' + word);
+               alert('You won! The word was: ' + word);
                reset();
           }
      }else{
@@ -80,6 +96,7 @@ function guess(){
           document.getElementById("wrongOutput").innerHTML = wrongChars;
           if (wrongChars.length == 9) {
                console.log('You lost! The word was: '+ word);
+               alert('You lost! The word was: '+ word);
                reset();
           }
           document.getElementById("hangman").innerHTML = hangmanStages[wrongChars.length];
@@ -98,8 +115,9 @@ function reset(){
      wordOutputString = ''; //string
      inputGuess = '';//string
      guessArray = [];//array
-     document.getElementById("wordOutput").innerHTML = '';
-     document.getElementById("wrongOutput").innerHTML = '';
+     document.getElementById("wordOutput").innerHTML = 'placeholder';
+     document.getElementById("wrongOutput").innerHTML = 'placeholder';
+     document.getElementById("word").innerHTML = 'Wort:'
      document.getElementById("hangman").innerHTML = hangmanStages[0];
      document.getElementById("submitButton").disabled = false;
      document.getElementById("submitGuessButton").disabled = true;
