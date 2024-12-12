@@ -1,4 +1,7 @@
-
+/*
+     wordinputfield disablen
+     
+ */
 let word;
 let wordInChars = [];
 let wrongChars = [];
