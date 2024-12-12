@@ -19,36 +19,32 @@ document.addEventListener("DOMContentLoaded", () => {
 
 function readTextField(){
      word = readAndDelete("wordTextField");
-     if (word != -1) {
-          document.getElementById("submitButton").disabled = true;
-          document.getElementById("submitGuessButton").disabled = false;
-
-          wordInChars = word.split('');
-
-          charToOutput();
-          displayWordLength();
-
-     }else{
+     if (word == null) {
           alert('Please put a word in the word Field!');
+          return;
      }
+     document.getElementById("submitButton").disabled = true;
+     document.getElementById("submitGuessButton").disabled = false;
+     wordInChars = word.split('');
+     charToOutput();
+     displayWordLength();
 }
 
 function readGuessTextField(){
      inputGuess = readAndDelete("guessTextField");
-     if (inputGuess != -1) {
-          guessArray = inputGuess.split('',1);
-          guess();   
-     }else{
+     if (inputGuess == null){
           alert('Please put a character in the Guess Field!');
+          return;
      }
-     
+     guessArray = inputGuess.split('',1);
+     guess();
 }
 
 function readAndDelete(textField){
      originalText = document.getElementById(textField).value;
      document.getElementById(textField).value = '';
      if (originalText.trim() == '') {
-          return -1;
+          return null;
      }else{
           text = originalText.toLowerCase();
           return text;
@@ -69,7 +65,6 @@ function charToOutput(){
                wordOutputArray[i] = '_';
           }   
      }
-
      wordOutputString = wordOutputArray.join('');
      document.getElementById("wordOutput").innerHTML = wordOutputString;
 }
