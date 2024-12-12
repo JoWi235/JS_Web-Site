@@ -65,3 +65,7 @@
 p:empty {
     height: 19px;
 }
+
+pre:empty {
+    height: 19px;
+}

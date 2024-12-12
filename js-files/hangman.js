@@ -1,7 +1,3 @@
-/*
-     chars beschränken oder zeile umbrüche machen
-
- */
 
 let word;
 let wordInChars = [];
@@ -20,7 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 function readTextField(){
      word = readAndDelete("wordTextField");
-     if (word != 1) {
+     if (word != -1) {
           document.getElementById("submitButton").disabled = true;
           document.getElementById("submitGuessButton").disabled = false;
 
@@ -36,7 +32,7 @@ function readTextField(){
 
 function readGuessTextField(){
      inputGuess = readAndDelete("guessTextField");
-     if (inputGuess != 1) {
+     if (inputGuess != -1) {
           guessArray = inputGuess.split('',1);
           guess();   
      }else{
@@ -49,7 +45,7 @@ function readAndDelete(textField){
      originalText = document.getElementById(textField).value;
      document.getElementById(textField).value = '';
      if (originalText.trim() == '') {
-          return 1;
+          return -1;
      }else{
           text = originalText.toLowerCase();
           return text;
