@@ -1,65 +1,65 @@
 
 #hangmanGame {
-    background-color: #f9f9f9; /* Heller Hintergrund für einen klaren Look */
-    border: 2px solid #ccc; /* Dezente Umrandung */
-    border-radius: 10px; /* Abgerundete Ecken */
-    padding: 20px; /* Innenabstand */
-    width: 80%; /* Breite des Containers */
-    max-width: 600px; /* Maximale Breite für größere Bildschirme */
-    margin: 20px auto; /* Zentriert auf der Seite */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Schatten für Tiefe */
-    font-family: Arial, sans-serif; /* Lesbare Schriftart */
-    color: #333; /* Dunkle Schriftfarbe */
+    background-color: #f9f9f9;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    width: 80%;
+    max-width: 600px;
+    margin: 20px auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+    color: #333;
 }
 
 #hangmanGame h2 {
-    text-align: center; /* Überschrift zentrieren */
-    color: #444; /* Dezente Überschriftenfarbe */
+    text-align: center;
+    color: #444;
 }
 
 #hangmanGame input[type="text"] {
-    width: 100%; /* Volle Breite des Eingabefelds */
-    padding: 10px; /* Innenabstand für bessere Lesbarkeit */
-    margin: 10px 0; /* Abstand zu anderen Elementen */
-    border: 1px solid #ccc; /* Umrandung des Eingabefelds */
-    border-radius: 5px; /* Abgerundete Ecken */
-    box-sizing: border-box; /* Box-Modell berücksichtigen */
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
 }
 
 #hangmanGame button {
-    background-color: #007BFF; /* Blaues Design */
-    color: white; /* Weiße Schrift */
-    border: none; /* Keine Umrandung */
-    border-radius: 5px; /* Abgerundete Ecken */
-    padding: 10px 15px; /* Innenabstand */
-    cursor: pointer; /* Zeiger auf Mausover */
-    margin-top: 10px; /* Abstand nach oben */
-    display: inline-block; /* Neben anderen Elementen */
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+    margin-top: 10px;
+    display: inline-block;
 }
 
 #hangmanGame button:disabled {
-    background-color: #ccc; /* Graues Design für deaktivierte Buttons */
-    cursor: not-allowed; /* Kein Zeiger für deaktivierte Buttons */
+    background-color: #ccc;
+    cursor: not-allowed;
 }
 
 #hangmanGame #outputDiv {
-    margin-top: 20px; /* Abstand nach oben */
-    padding: 10px; /* Innenabstand */
-    background-color: #eef; /* Leicht blauer Hintergrund */
-    border: 1px solid #ddd; /* Dezente Umrandung */
-    border-radius: 5px; /* Abgerundete Ecken */
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #eef;
+    border: 1px solid #ddd;
+    border-radius: 5px;
 }
 
 #hangmanGame #hangman {
-    font-family: monospace; /* Monospace-Schrift für Konsolen-Design */
-    text-align: left; /* Linksbündiger Text */
-    white-space: pre-wrap; /* Zeilenumbrüche erlauben */
-    margin-top: 20px; /* Abstand nach oben */
-    padding: 10px; /* Innenabstand für Lesbarkeit */
-    border: 1px solid #ddd; /* Dezente Umrandung */
-    border-radius: 5px; /* Abgerundete Ecken */
-    background-color: #f4f4f4; /* Hintergrund für besseren Kontrast */
-    color: #007BFF; /* Blaues Design */
+    font-family: monospace;
+    text-align: left;
+    white-space: pre-wrap;
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f4f4f4;
+    color: #007BFF;
 }
 
 p:empty {
